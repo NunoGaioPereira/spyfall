@@ -1,0 +1,26 @@
+{
+    "themes":[
+        {
+            "general":{
+                "locations":[
+                    {
+                        "name":"Beach",
+                        "professions":[
+                            "Tourist",
+                            "Lifeguard"
+                        ],
+                        "image_name":"beach.png"
+                    },
+                    {
+                        "name":"Polar Station",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"pola_station.png"
+                    }
+                ]
+            }
+        }
+    ]
+}
