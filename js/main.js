@@ -17,7 +17,7 @@ const app = () => {
     const min_up = document.querySelector('.time-picker .minute .min-up');
     const min_down = document.querySelector('.time-picker .minute .min-down');
     const endAudio = new Audio();
-    endAudio.src = './includes/sounds/silence.mp3';
+    endAudio.src = './includes/sounds/theme1.mp3';
     // endAudio.play();
 
     const start = document.getElementById('start');
@@ -86,42 +86,20 @@ const app = () => {
     });
 
     // Event listeners
-    // hr_up.addEventListener('click', hour_up);
-    // hr_down.addEventListener('click', hour_down);
-
     min_up.addEventListener('click', minute_up);
     min_down.addEventListener('click', minute_down);
 
-    // hr_element.addEventListener('change', hour_change);
     min_element.addEventListener('change', minute_change);
-
-    // function hour_up () {
-    //     hour++;
-    //     if (hour > 23) {
-    //         hour = 0;
-    //     }
-    //     setTime();
-    // }
-
-    // function hour_down () {
-    //     hour--;
-    //     if (hour < 0) {
-    //         hour = 0;
-    //     }
-    //     setTime();
-    // }
 
     function minute_up () {
         if (minute >= 60) { }
-        else if (minute < 5) { minute++; }
-        else { minute+=5; }
+        else { minute++; }
         setTime();
     }
 
     function minute_down () {
         if (minute <= 5 && minute != 1) { minute--; }
-        else if(minute == 1) {}
-        else { minute-=5; }
+        else { minute--; }
         setTime();
     }
 
