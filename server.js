@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 var socket = require('socket.io');
 
 const port = process.env.PORT || 3000;
@@ -19,12 +20,24 @@ app.use(express.static('content'));
 // 	})
 // );
 
+
+const json_data = JSON.parse(fs.readFileSync('./content/data.json', 'utf8'));
+const num_locations = json_data.themes[0].general.locations.length;
+const location_index = randomIntFromInterval(0, num_locations - 1);
+const num_roles = json_data.themes[0].general.locations[location_index].professions;
+
+console.log(json_data.themes[0].general.locations[location_index].professions)
+
+const num_players = 8;
+const spy_index = randomIntFromInterval(0, num_players - 1);
+const all_spies = false;
+
 var rooms = {};
 
 var io = socket(server);
 
 io.on('connection', (socket) => {
-	console.log("Connected!");
+	console.log("Connected!", socket.id);
 	// socket.on('create_room', data => {});
 
 	// socket.on('join_room', data => {
@@ -69,4 +82,8 @@ function keyCreator() {
 		rooms[temp_key] = {};
 		return temp_key;
 	}
+}
+
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }

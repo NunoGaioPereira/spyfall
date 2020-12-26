@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
     <title>Spyfal</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
     <!-- <link rel="shortcut icon" type="image/png" href="includes/imgs/favicon.png"/> -->
     <!-- <link rel="apple-touch-icon" href="includes/imgs/apple-touch-icon.png"> -->
 </head>
@@ -25,6 +26,8 @@
             <img class="logo noselect" src="./includes/imgs/logo.png">
         </div>
         <div>
+            <p id="error_message" style="color: red; font-weight: bold; margin-bottom: 8px; text-align: center;"></p>
+            <input type="text" name="player-name" id="player-name" maxlength="20" placeholder="Enter your name...">
             <a href="#/" id="join" class="noselect">Join game</a>
             <a href="#/" id="start" class="noselect">Create game</a>
         </div>
@@ -43,11 +46,12 @@
 
     <div class="name-modal">
         <img class="logo noselect" src="./includes/imgs/hat_round.png">
-        <h3>Choose a name!</h3>
-        <input type="text" name="player-name" id="player-name" placeholder="Detective">
+        <h3>Enter room code:</h3>
+        <input type="text" name="join-code" id="join-code" maxlength="6" placeholder="Code">
+        <p id="room_error_message" style="color: red; font-weight: bold; margin-top: 8px;"></p>
         <div class="buttons">
             <a href="#/" id="close_name" class="noselect">Cancel</a>
-            <a href="#/" id="start_game" class="noselect">Create</a>
+            <a href="#/" id="join_game" class="noselect">Go</a>
         </div>
     </div>
     <div id="cover"></div>
