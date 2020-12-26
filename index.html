@@ -24,15 +24,12 @@
         <div class="info">
             <img class="logo noselect" src="./includes/imgs/logo.png">
         </div>
+        <div>
+            <a href="#/" id="join" class="noselect">Join game</a>
+            <a href="#/" id="start" class="noselect">Create game</a>
+        </div>
         <div class="main">
             <div class="settings">
-                <div class="setting video-set">
-                    <span class="setting-title noselect">Timer</span>
-                    <label class="switch">
-                      <input type="checkbox" class="videoCheck" checked>
-                      <span class="slider round"></span>
-                    </label>
-                </div>
                 <div class="setting">
                     <span class="setting-title noselect">Dark theme</span>
                     <label class="switch">
@@ -42,8 +39,19 @@
                 </div>
             </div>  
         </div>
-        <a href="#/" id="start" class="noselect">Start</a>
     </div>
-    <script src="./js/main.js"></script>
+
+    <div class="name-modal">
+        <img class="logo noselect" src="./includes/imgs/hat_round.png">
+        <h3>Choose a name!</h3>
+        <input type="text" name="player-name" id="player-name" placeholder="Detective">
+        <div class="buttons">
+            <a href="#/" id="close_name" class="noselect">Cancel</a>
+            <a href="#/" id="start_game" class="noselect">Create</a>
+        </div>
+    </div>
+    <div id="cover"></div>
+
+    <script src="./js/home.js"></script>
 </body>
 </html>

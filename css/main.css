@@ -11,15 +11,31 @@
     --track-outline: #f2f2f2;
     --light-contrast: #1c84d6; /*5a6174*/ 
     --dark-contrast: #5ea7e1; /*9298aa*/
+
+    //--light-gray: #eee;
+    --text-gray: #47474a;
+
+    --text-white: #fff;
+    --text-blue-white: #1c84d6;
+    --text-gray-white: #47474a;
 }
 
 .dark {
-    --background: #22292f;
+    --background: #404040;
     /*--light-gray: #9298aa;*/
     --track-outline: #9298aa;
     --light-gray: #c6cfeb;
     --light-contrast: #5a6174;
     --dark-contrast: #9298aa;
+
+    /*NEW COLOURS*/
+    --light-contrast: #1c84d6;
+    --dark-contrast: #6ebee6;
+    --light-gray: #555;
+
+    --text-white: #fff;
+    --text-blue-white: #fff;
+    --text-gray-white: #fff;
 }
 
 body {
@@ -249,6 +265,7 @@ h3 {
 .settings {
     margin: 50px auto 0;
     max-width: 200px;
+    width: 200px;#
     /*text-align: center;*/
 } 
 
@@ -259,7 +276,7 @@ h3 {
 }
 
 .settings .setting .setting-title {
-    color: var(--light-contrast);
+    color: var(--text-blue-white);
     font-weight: 600;
 }
 
@@ -325,33 +342,31 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-#start {
-    margin: 50px auto 0;
+#start, #join {
+    margin: 0 auto;
     display: block;
     border-radius: 4px;
-    color: var(--background);
+    color: var(--text-white);
     background-color: var(--light-contrast);
-    width: 220px;
+    width: 240px;
     text-align: center;
     text-decoration: none;
-    padding: 12px;
+    padding: 15px;
     font-weight: 600;
-    transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;;
+    transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
 }
 
 #start:hover {
     background-color: var(--dark-contrast);
 }
 
-video {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto;
-  height: auto;
-  z-index: -1;
+#join {
+  margin-bottom: 15px;
+  color: var(--text-gray-white);
+  background-color: var(--light-gray);
+}
+#join:hover {
+    background-color: #eee;
 }
 
 .modal {
@@ -463,6 +478,103 @@ video {
     /*stroke: #ffffff61;*/
     stroke: var(--track-outline);
  }
+
+
+
+/* Name modal */
+.name-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--background);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 40px;
+  visibility: hidden;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.name-modal input {
+  margin: 0 auto;
+  display: block;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  color: var(--text-gray);
+  background-color: var(--light-gray);
+  width: 240px;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+.name-modal img {
+  width: 85px;
+  margin: 0 auto 15px;
+}
+
+.name-modal h3 {
+  color: #333;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.name-modal .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.name-modal .buttons a {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  color: var(--text-gray);
+  background-color: var(--light-gray);
+  width: 47%;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+.name-modal .buttons a:nth-child(2) {
+  background-color: var(--light-contrast);
+  color: #fff;
+}
+
+
+.name-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+#cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+}
+#cover.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
 
 @media (pointer: coarse) {
     .video-container, .video-set {
