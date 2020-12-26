@@ -5,6 +5,12 @@
     touch-action: manipulation;
 }
 
+:root {
+  --locations-side: 140px;
+  --locations-grid-gap: 8px;
+  --locations-grid-gap: 8px;
+}
+
 .light {
     --background: #fff;
     --light-gray: #f2f2f2;
@@ -609,7 +615,7 @@ input:checked + .slider:before {
 }
 
 .players {
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .players h3 {
@@ -657,17 +663,56 @@ input:checked + .slider:before {
 }
 
 
-/*
-.players .players-grid .player-card.striked:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  box-shadow: 0 1px rgba(255,255,255,0.6);
-  margin-top: -0.7em;
-  background: black;
-  transform-origin: center left;
-  animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
-  transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
-}*/
+.locations {
+  margin: 30px auto;
+  padding: 15px;
+}
+
+.locations h3 {
+  color: var(--text-gray-white);
+  font-weight: bold;
+}
+
+.locations .locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--locations-grid-gap);
+  margin: 0 auto;
+  width: calc((var(--locations-side) * 2) + (1 * var(--locations-grid-gap)));
+  max-width: 800px;
+  /*padding: 15px;*/
+  text-align: center;
+}
+
+.locations .locations-grid .location-card {
+  width: var(--locations-side);
+  height: var(--locations-side);
+  /*background-image: url('../includes/imgs/bgs/beach.png');*/
+  /*background-image: attr(data-url url);*/
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+@media (min-width: 600px) {
+  .locations .locations-grid { 
+    grid-template-columns: 1fr 1fr 1fr;
+    width: calc((var(--locations-side) * 3) + (2 * var(--locations-grid-gap)));
+  }
+}
+@media (min-width: 800px) {
+  .locations .locations-grid { 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: calc((var(--locations-side) * 4) + (3 * var(--locations-grid-gap)));
+  }
+}
+@media (min-width: 1000px) {
+  .locations .locations-grid { 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: calc((var(--locations-side) * 6) + (5 * var(--locations-grid-gap)));
+  }
+}

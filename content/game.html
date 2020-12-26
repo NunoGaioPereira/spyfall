@@ -50,11 +50,20 @@
             </div>
         </div>
 
-
         <div class="locations">
             <h3>Locations</h3>
             <div class="locations-grid">
-                <div class="location-card" data-content="Beach">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/spy.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
             </div>
         </div>
 
@@ -82,6 +91,13 @@
             item.classList.toggle('striked');
           })
         })
+
+        var imgs_list = document.getElementsByClassName('location-card');
+
+        for (var i = 0; i < imgs_list.length; i++) {
+          var src = imgs_list[i].getAttribute('data-url');
+          imgs_list[i].style.backgroundImage="url('" + src + "')";
+        }
     </script>
 </body>
 </html>
