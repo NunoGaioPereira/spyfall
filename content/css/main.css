@@ -21,12 +21,16 @@
     --light-contrast: #1c84d6; /*5a6174*/ 
     --dark-contrast: #5ea7e1; /*9298aa*/
 
+    --white-light-gray: #fff;
+
     //--light-gray: #eee;
     --text-gray: #47474a;
 
     --text-white: #fff;
     --text-blue-white: #1c84d6;
     --text-gray-white: #47474a;
+
+    --shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dark {
@@ -41,10 +45,13 @@
     --light-contrast: #1c84d6;
     --dark-contrast: #6ebee6;
     --light-gray: #555;
+    --white-light-gray: #555;
 
     --text-white: #fff;
     --text-blue-white: #fff;
     --text-gray-white: #fff;
+
+    --shadow: none;
 }
 
 body {
@@ -426,7 +433,7 @@ input:checked + .slider:before {
 
 /* Name modal */
 .name-modal {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -462,7 +469,7 @@ input:checked + .slider:before {
 }
 
 .name-modal h3 {
-  color: #333;
+  color: var(--text-gray-white);
   font-size: 25px;
   font-weight: bold;
 }
@@ -500,8 +507,8 @@ input:checked + .slider:before {
 }
 
 #cover {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
@@ -561,10 +568,11 @@ input:checked + .slider:before {
   height: 190px;
   border-radius: 6px;
   margin: 0 auto 20px;
-  background-color: var(--background);
-  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-light-gray);
+  box-shadow: var(--shadow);
   cursor: pointer;
   padding: 14px;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .game-info .card .bg {
@@ -577,6 +585,7 @@ input:checked + .slider:before {
 
 .game-info .info {
   color: var(--text-gray-white);
+  cursor: pointer;
 }
 
 .game-info .info .game-location {
@@ -640,6 +649,7 @@ input:checked + .slider:before {
   font-size: 14px;
   color: var(--text-gray-white);
   position: relative;
+  border-radius: 3px;
 }
 
 .players .players-grid .player-card.striked {
@@ -662,6 +672,20 @@ input:checked + .slider:before {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
+
+.players .players-grid .player-card.first:after {
+  content: '1st';
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  font-size: 8px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--light-contrast);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
 
 .locations {
   margin: 30px auto;
@@ -688,6 +712,7 @@ input:checked + .slider:before {
   width: var(--locations-side);
   height: var(--locations-side);
   color: #fff;
+  text-shadow: 1px 1px black;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -720,6 +745,64 @@ input:checked + .slider:before {
   opacity: 1;
   height: 100px;
   width: 100px;
+}
+
+/* Name modal */
+.end-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--background);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 40px;
+  visibility: hidden;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.end-modal img {
+  width: 85px;
+  margin: 0 auto 15px;
+}
+
+.end-modal h3 {
+  color: var(--text-gray-white);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.end-modal .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.end-modal .buttons a {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--light-contrast);
+  width: 47%;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+.end-modal .buttons a:nth-child(2) {
+  background-color: var(--red);
+}
+
+
+.end-modal.open {
+    opacity: 1;
+    visibility: visible;
 }
 
 

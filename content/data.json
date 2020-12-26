@@ -18,6 +18,54 @@
                             "Polar Bear"
                         ],
                         "image_name":"pola_station.png"
+                    },
+                    {
+                        "name":"Castle",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"castle.png"
+                    },
+                    {
+                        "name":"Football match",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"football.png"
+                    },
+                    {
+                        "name":"Museum",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"museum.png"
+                    },
+                    {
+                        "name":"The Room You Are In",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"room.png"
+                    },
+                    {
+                        "name":"Polar Station",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"pola_station.png"
+                    }
+                    {
+                        "name":"Polar Station",
+                        "professions":[
+                            "Scientist",
+                            "Polar Bear"
+                        ],
+                        "image_name":"pola_station.png"
                     }
                 ]
             }

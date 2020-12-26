@@ -11,116 +11,143 @@
     <!-- <link rel="apple-touch-icon" href="includes/imgs/apple-touch-icon.png"> -->
 </head>
 <body class="light">
-    <div class="loader">
-         <img class="noselect" src="./includes/imgs/logo.png">
-         <svg class="spinner" width="24" height="24" viewBox="0 0 24 24">
-            <g fill="none" fill-rule="nonzero">
-                <path class="ring_thumb" fill="#029fee" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"></path>
-                <path class="ring_track" fill="#f2f2f2" d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z"></path>
-            </g>
-        </svg>
-    </div>
-    <div class="game">
-        <div class="info">
-            <img class="logo noselect" src="./includes/imgs/logo.png">
-        </div>
-
-        <div class="game-info">
-            <div class="timer" id="timer">10:00</div>
-            <div class="card" onclick="hide_info(this)">
-                <div class="bg"></div>
-            </div>
+    <div id="app">
+        <!-- <div class="loader">
+             <img class="noselect" src="./includes/imgs/logo.png">
+             <svg class="spinner" width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" fill-rule="nonzero">
+                    <path class="ring_thumb" fill="#029fee" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"></path>
+                    <path class="ring_track" fill="#f2f2f2" d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z"></path>
+                </g>
+            </svg>
+        </div> -->
+        <div class="game">
             <div class="info">
-                <p class="game-location">Beach</p>
-                <p class="job">Tourist</p>
+                <img class="logo noselect" src="./includes/imgs/logo.png">
             </div>
-            <div class="game-controls">
-                <a href="#/" id="end_game" class="noselect">End game</a>
-                <a href="#/" id="pause_game" class="noselect">Pause</a>    
+            <div class="main">
+                <div class="settings">
+                    <div class="setting">
+                        <span class="setting-title noselect">Dark theme</span>
+                        <label class="switch">
+                          <input type="checkbox" class="themeCheck">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>  
             </div>
+
+            <div class="game-info">
+                <div class="timer" id="timer">10:00</div>
+                <div class="card" onclick="hide_info(this)">
+                    <div class="bg"></div>
+                </div>
+                <div class="info" onclick="hide_info(this)">
+                    <p class="game-location">Beach</p>
+                    <p class="job">Tourist</p>
+                </div>
+                <div class="game-controls">
+                    <a href="#/" id="end_game" class="noselect">End game</a>
+                    <a href="#/" id="pause_game" class="noselect">Pause</a>    
+                </div>
+            </div>
+
+            <div class="players">
+                <h3>Players</h3>
+                <div class="players-grid">
+                    <div class="player-card first" data-content="Ana">Ana</div>
+                    <div class="player-card" data-content="André">André</div>
+                    <div class="player-card" data-content="Filipe">Filipe</div>
+                    <div class="player-card" data-content="Nuno">Nuno</div>
+                </div>
+            </div>
+
+            <div class="locations">
+                <h3>Locations</h3>
+                <div class="locations-grid">
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Bar
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/beach.png">
+                        Beach
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/football.png">
+                        Footbal Match
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        The Room You Are In
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                    <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                        Castle
+                        <div class="red-x"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div>
+                <a href="#/" id="join" class="noselect">Join game</a>
+                <a href="#/" id="start" class="noselect">Create game</a>
+            </div> -->
+            <!-- <div class="main">
+                <div class="settings">
+                    <div class="setting">
+                        <span class="setting-title noselect">Dark theme</span>
+                        <label class="switch">
+                          <input type="checkbox" class="themeCheck">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>  
+            </div> -->
         </div>
 
-        <div class="players">
-            <h3>Players</h3>
-            <div class="players-grid">
-                <div class="player-card" data-content="Ana">Ana</div>
-                <div class="player-card" data-content="André">André</div>
-                <div class="player-card" data-content="Filipe">Filipe</div>
-                <div class="player-card" data-content="Nuno">Nuno</div>
+
+        <div class="end-modal">
+            <img class="logo noselect" src="./includes/imgs/end.png">
+            <h3>Are you sure?</h3>
+            <div class="buttons">
+                <a href="#/" id="cancel_end" class="noselect">Cancel</a>
+                <a href="#/" id="confirm_end" class="noselect">End game</a>
             </div>
         </div>
-
-        <div class="locations">
-            <h3>Locations</h3>
-            <div class="locations-grid">
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/beach.png">
-                    Beach
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Bar
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
-                    Castle
-                    <div class="red-x"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div>
-            <a href="#/" id="join" class="noselect">Join game</a>
-            <a href="#/" id="start" class="noselect">Create game</a>
-        </div> -->
-        <!-- <div class="main">
-            <div class="settings">
-                <div class="setting">
-                    <span class="setting-title noselect">Dark theme</span>
-                    <label class="switch">
-                      <input type="checkbox" class="themeCheck">
-                      <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>  
-        </div> -->
+        <div id="cover"></div>
     </div>
-    <script src="./js/home.js"></script>
+
+
+    <script src="./js/common.js"></script>
+    <!-- <script src="./js/home.js"></script> -->
 
     <script type="text/javascript">
         document.querySelectorAll('.player-card').forEach(item => {
@@ -133,7 +160,7 @@
 
         for (var i = 0; i < imgs_list.length; i++) {
           var src = imgs_list[i].getAttribute('data-url');
-          imgs_list[i].style.backgroundImage="linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('" + src + "')";
+          imgs_list[i].style.backgroundImage="linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('" + src + "')";
         }
 
 
@@ -170,7 +197,7 @@
         var count_down = 0;
         var game_running = true;
 
-        game_minutes = 5;
+        game_minutes = 10;
         count_down = game_minutes * 60;
 
         function update_time() {
@@ -187,7 +214,7 @@
 
             if (min + sec <= 0) {
                 //socket_link.emit('game_stop', room_key);
-                time_display.innerHTML = 'Times up!';
+                time_display.innerHTML = 'Finito!';
                 clock.clearInterval(0);
             }
 
@@ -235,8 +262,24 @@
             }
         });
 
-        function pauseGame() {
-            
+        
+
+
+        const end_modal = document.querySelector('.end-modal');
+        const cover = document.querySelector('#cover');
+        const end_game = document.querySelector('#end_game');
+        const confirm_end = document.querySelector('#confirm_end');
+        const cancel_end = document.querySelector('#cancel_end');
+
+        end_game.addEventListener('click', openEndModal);
+        cancel_end.addEventListener('click', openEndModal);
+        cover.addEventListener('click', openEndModal);
+
+        // confirm_end.addEventListener('click', endGame);
+
+        function openEndModal () {
+            end_modal.classList.toggle('open');
+            cover.classList.toggle('open');
         }
 
     </script>
