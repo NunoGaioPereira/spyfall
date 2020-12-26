@@ -26,7 +26,7 @@
         </div>
 
         <div class="game-info">
-            <div class="timer">10:00</div>
+            <div class="timer" id="timer">10:00</div>
             <div class="card" onclick="hide_info(this)">
                 <div class="bg"></div>
             </div>
@@ -163,6 +163,80 @@
                 player_role.innerHTML = '(click to unhide)';
                 location_card.style.backgroundImage="url('./includes/imgs/bgs/hidden.png')";
             }
+        }
+
+
+        var time_display = document.getElementById('timer');
+        var count_down = 0;
+        var game_running = true;
+
+        game_minutes = 5;
+        count_down = game_minutes * 60;
+
+        function update_time() {
+            // if ('data.room_up' == 'up') {
+            //     gameup = true;
+            // } else {
+            //     return (gameup = false);
+            // }
+
+            if (game_running == false) { return false; }
+
+            let min = Math.floor((count_down % 3600) / 60);
+            let sec = Math.floor((count_down % 3600) % 60);
+
+            if (min + sec <= 0) {
+                //socket_link.emit('game_stop', room_key);
+                time_display.innerHTML = 'Times up!';
+                clock.clearInterval(0);
+            }
+
+            time_display.innerHTML = (min = min < 10 ? '0' + min : min) + ':' + (sec = sec < 10 ? '0' + sec : sec);
+            count_down--;
+        }
+
+        let uptime = 0;
+        let last_sec = 0;
+        setInterval(() => {
+            var today = new Date();
+
+            let second = today.getSeconds();
+
+            if (last_sec != second) {
+                last_sec = second;
+                ++uptime;
+
+                update_time();
+
+                // for (let key in rooms) {
+                //     for (let e of Object.keys(rooms[key]['players'])) {
+                //         io.to(e).emit('event_tick', {
+                //             uptime: uptime,
+                //             to_socket: e,
+                //             room_up: rooms[key]['prefs'].gamestate
+                //         });
+                //     }
+                // }
+            }
+        }, 100);
+
+
+        var pause_button = document.getElementById('pause_game');
+        pause_button.addEventListener('click', () => {
+            if (game_running == false) { 
+                game_running = true;
+                pause_button.innerHTML = 'Pause';
+                pause_button.style.backgroundColor = '#15db51';
+            }
+            else { 
+                game_running = false;
+                pause_button.innerHTML = 'Resume';
+                pause_button.style.backgroundColor = '#1c84d6';
+            }
+        });
+
+        function pauseGame() {
+            
         }
 
     </script>
