@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Spyfal</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <!-- <link rel="shortcut icon" type="image/png" href="includes/imgs/favicon.png"/> -->
+    <!-- <link rel="apple-touch-icon" href="includes/imgs/apple-touch-icon.png"> -->
+</head>
+<body class="light">
+    <div class="loader">
+         <img class="noselect" src="./includes/imgs/logo.png">
+         <svg class="spinner" width="24" height="24" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="nonzero">
+                <path class="ring_thumb" fill="#029fee" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"></path>
+                <path class="ring_track" fill="#f2f2f2" d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z"></path>
+            </g>
+        </svg>
+    </div>
+    <div class="game">
+        <div class="info">
+            <img class="logo noselect" src="./includes/imgs/logo.png">
+        </div>
+
+        <div class="game-info">
+            <div class="timer">10:00</div>
+            <div class="card">
+                <div class="bg"></div>
+            </div>
+            <div class="info">
+                <p class="game-location">Polar Station</p>
+                <p class="job">Tourist</p>
+            </div>
+            <div class="game-controls">
+                <a href="#/" id="end_game" class="noselect">End game</a>
+                <a href="#/" id="pause_game" class="noselect">Pause</a>    
+            </div>
+        </div>
+
+        <div class="players">
+            <h3>Players</h3>
+            <div class="players-grid">
+                <div class="player-card" data-content="Ana">Ana</div>
+                <div class="player-card" data-content="André">André</div>
+                <div class="player-card" data-content="Filipe">Filipe</div>
+                <div class="player-card" data-content="Nuno">Nuno</div>
+            </div>
+        </div>
+
+
+        <div class="locations">
+            <h3>Locations</h3>
+            <div class="locations-grid">
+                <div class="location-card" data-content="Beach">Beach</div>
+            </div>
+        </div>
+
+        <!-- <div>
+            <a href="#/" id="join" class="noselect">Join game</a>
+            <a href="#/" id="start" class="noselect">Create game</a>
+        </div> -->
+        <!-- <div class="main">
+            <div class="settings">
+                <div class="setting">
+                    <span class="setting-title noselect">Dark theme</span>
+                    <label class="switch">
+                      <input type="checkbox" class="themeCheck">
+                      <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>  
+        </div> -->
+    </div>
+    <script src="./js/home.js"></script>
+
+    <script type="text/javascript">
+        document.querySelectorAll('.player-card').forEach(item => {
+          item.addEventListener('click', event => {
+            item.classList.toggle('striked');
+          })
+        })
+    </script>
+</body>
+</html>
