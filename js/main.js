@@ -8,17 +8,12 @@ const app = () => {
     const bd = document.getElementsByTagName('body')[0];
     const time_picker_element = document.querySelector('.time-picker');
 
-    // var hr_element = document.querySelector('.time-picker .hour .hr');
     var min_element = document.querySelector('.time-picker .minute .min');
-
-    // const hr_up = document.querySelector('.time-picker .hour .hr-up');
-    // const hr_down = document.querySelector('.time-picker .hour .hr-down');
 
     const min_up = document.querySelector('.time-picker .minute .min-up');
     const min_down = document.querySelector('.time-picker .minute .min-down');
     const endAudio = new Audio();
     endAudio.src = './includes/sounds/theme1.mp3';
-    // endAudio.play();
 
     const start = document.getElementById('start');
     const modal = document.querySelector('.modal');
@@ -105,31 +100,13 @@ const app = () => {
 
     function setTime() {
         min_element.value = formatTime(minute);
-        // time_picker_element.dataset.time = formatTime(hour) + ':' + formatTime(minute);
         time_picker_element.dataset.time = '00:' + formatTime(minute);
     }
 
     function formatTime(time) {
-        if (time < 10) {
-            time = '0' + time;
-        }
+        if (time < 10) { time = '0' + time; }
         return time;
     }
-
-    // function hour_change (e) {
-    //     if (e.target.value > 23) {
-    //         e.target.value = 23;
-    //     }
-    //     else if (e.target.value < 0) {
-    //         e.target.value = '00';
-    //     }
-
-    //     if (e.target.value == "") {
-    //         e.target.value = formatTime(hour);
-    //     }
-
-    //     hour = e.target.value;
-    // }
 
     function minute_change (e) {
         if (e.target.value > 60) {
@@ -165,7 +142,6 @@ const app = () => {
             if(matchMedia('(pointer:fine)').matches) { video.style.display = 'none'; }
         }
         else {
-            if(matchMedia('(pointer:fine)').matches) { video.style.display = 'initial'; }
             bd.setAttribute("style", "--light-contrast: #fff; --track-outline: #ffffff25");
         }
 
@@ -181,12 +157,12 @@ const app = () => {
         app_body.classList.toggle('open');
         play.classList.toggle('open');
         outline.style.strokeDashoffset = "1360px";
-        if (localStorage.getItem('isDark') == 'true') { 
+        /*if (localStorage.getItem('isDark') == 'true') { 
             bd.setAttribute("style", "--light-contrast: #5a6174; --track-outline: #9298aa"); 
         }
         else { 
             bd.setAttribute("style", "--light-contrast: #5a6174; --track-outline: #f2f2f2"); 
-        }
+        }*/
     }
 
     const song = document.querySelector('.song');
@@ -195,7 +171,7 @@ const app = () => {
     const video = document.querySelector('.video-container video');
     const video_container = document.querySelector('.video-container');
     // Remove video for mobile devices
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { video_container.removeChild(video); }
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { video_container.removeChild(video); }
 
     // Sounds
     const sounds = document.querySelectorAll('.sound-picker button');
@@ -230,15 +206,8 @@ const app = () => {
     // Select sound
     timeSelect.forEach(option =>{
         option.addEventListener('click', function(){
-          // use function() to be able to use this
           song.currentTime = 0; // reset time
-          // sessionLength = this.getAttribute('data-time');
-          // timeDisplay.textContent = `${Math.floor(sessionLength / 60)}:${Math.floor(sessionLength % 60)}0`;
-          // Pause everything
-          // song.pause();
-          // song.currentTime = 0;
           play.src = './includes/imgs/play.svg';
-          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
         })
     });
 
@@ -247,8 +216,6 @@ const app = () => {
         if (song.paused) {
           song.play();
           play.src = "./includes/imgs/pause.svg";
-          if(matchMedia('(pointer:fine)').matches) { video.play(); }
-          // timeInPause = Math.round((Date.now() - pauseStart) / 1000);
           timeInPause = Date.now() - pauseStart;
           end += timeInPause;
           pauseStart = 0;
@@ -256,7 +223,6 @@ const app = () => {
         else {
           song.pause();
           play.src = "./includes/imgs/play.svg"; 
-          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
           pauseStart = Date.now();
         }
     };
@@ -310,9 +276,7 @@ const app = () => {
               song.pause();
               song.currentTime = 0;
               play.src = './includes/imgs/play.svg';
-              if(matchMedia('(pointer:fine)').matches) { video.pause(); }
               // var endAudio = new Audio('./includes/sounds/bowl.mp3');
-              endAudio.src = './includes/sounds/bowl.mp3';
               endAudio.loop = false;
               endAudio.volume = 0.5;
               endAudio.play(); 
