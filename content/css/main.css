@@ -9,6 +9,9 @@
   --locations-side: 140px;
   --locations-grid-gap: 8px;
   --locations-grid-gap: 8px;
+
+  --red: #ff2a2a;
+  --green: #15db51;
 }
 
 .light {
@@ -568,8 +571,6 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: url('../includes/imgs/bgs/beach.png');
-  background-image: url('../includes/imgs/bgs/spy.png');
   background-size: cover;
 }
 
@@ -599,8 +600,8 @@ input:checked + .slider:before {
   border-radius: 4px;
   border: none;
   font-size: 13px;
-  color: var(--text-gray);
-  background-color: var(--light-gray);
+  color: #fff;
+  background-color: var(--red);
   width: 47%;
   text-align: center;
   text-decoration: none;
@@ -610,8 +611,7 @@ input:checked + .slider:before {
 }
 
 .game-info .game-controls a:nth-child(2) {
-  background-color: var(--light-contrast);
-  color: #fff;
+  background-color: var(--green);
 }
 
 .players {
@@ -687,14 +687,39 @@ input:checked + .slider:before {
 .locations .locations-grid .location-card {
   width: var(--locations-side);
   height: var(--locations-side);
-  /*background-image: url('../includes/imgs/bgs/beach.png');*/
-  /*background-image: attr(data-url url);*/
+  color: #fff;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.locations .locations-grid .location-card .red-x {
+  background-image: url('../includes/imgs/cross.png');
+  width: 85%;
+  height: 85%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  height: 0;
+  width: 0;
+  /*left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;*/
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+.locations .locations-grid .location-card .red-x.visible {
+  opacity: 1;
+  height: 100px;
+  width: 100px;
 }
 
 

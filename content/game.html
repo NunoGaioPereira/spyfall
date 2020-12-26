@@ -27,11 +27,11 @@
 
         <div class="game-info">
             <div class="timer">10:00</div>
-            <div class="card">
+            <div class="card" onclick="hide_info(this)">
                 <div class="bg"></div>
             </div>
             <div class="info">
-                <p class="game-location">Polar Station</p>
+                <p class="game-location">Beach</p>
                 <p class="job">Tourist</p>
             </div>
             <div class="game-controls">
@@ -53,17 +53,54 @@
         <div class="locations">
             <h3>Locations</h3>
             <div class="locations-grid">
-                <div class="location-card" data-url="./includes/imgs/bgs/spy.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
-                <div class="location-card" data-url="./includes/imgs/bgs/beach.png">Beach</div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/beach.png">
+                    Beach
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Bar
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
+                <div class="location-card" onclick="cross(this)" data-url="./includes/imgs/bgs/soon.png">
+                    Castle
+                    <div class="red-x"></div>
+                </div>
             </div>
         </div>
 
@@ -96,8 +133,38 @@
 
         for (var i = 0; i < imgs_list.length; i++) {
           var src = imgs_list[i].getAttribute('data-url');
-          imgs_list[i].style.backgroundImage="url('" + src + "')";
+          imgs_list[i].style.backgroundImage="linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('" + src + "')";
         }
+
+
+        function cross(el) { el.querySelector('div.red-x').classList.toggle("visible"); }
+
+
+
+        var game_location = document.querySelector('.game-info .info .game-location');
+        var player_role = document.querySelector('.game-info .info .job');
+        var location_card = document.querySelector('.game-info .card .bg');
+
+        location_card.style.backgroundImage="url('./includes/imgs/bgs/beach.png')";
+
+        let hidden = false;
+        let location_string = game_location.innerHTML;
+        let job_string = player_role.innerHTML;
+        function hide_info() {
+            if (hidden) {
+                hidden = false;
+                game_location.innerHTML = location_string;
+                player_role.innerHTML = job_string;
+                location_card.style.backgroundImage="url('./includes/imgs/bgs/beach.png')";
+            }
+            else {
+                hidden = true;
+                game_location.innerHTML = 'Hidden';
+                player_role.innerHTML = '(click to unhide)';
+                location_card.style.backgroundImage="url('./includes/imgs/bgs/hidden.png')";
+            }
+        }
+
     </script>
 </body>
 </html>
