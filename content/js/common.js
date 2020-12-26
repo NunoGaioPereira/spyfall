@@ -1,4 +1,4 @@
-const app = () => {
+const main = () => {
 
     window.addEventListener('load', function(){
         const loader = document.querySelector('.loader');
@@ -42,4 +42,4 @@ const app = () => {
     });
 };
 
-app();
+main();

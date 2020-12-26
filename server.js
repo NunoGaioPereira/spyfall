@@ -3,46 +3,46 @@ const app = express();
 var socket = require('socket.io');
 
 // App setup
-var app = express();
 var server = app.listen(4000, function(){
     console.log('listening for requests on port 4000,');
 });
 
 
-app.use(express.static('public'));
-app.use(
-	serve_static('frontend', {
-		extensions: ['html'],
-		dotfiles: 'deny', // strictly deny all access to any directory containing a "." in case we want to hide files
-		index: ['index.html']
-	})
-);
+app.use(express.static('content'));
+// app.use(
+// 	serve_static('content', {
+// 		extensions: ['html'],
+// 		dotfiles: 'deny', // strictly deny all access to any directory containing a "." in case we want to hide files
+// 		index: ['index.html']
+// 	})
+// );
 
 var rooms = {};
 
 var io = socket(server);
 
 io.on('connection', (socket) => {
-	socket.on('create_room', data => {});
+	console.log("Connected!");
+	// socket.on('create_room', data => {});
 
-	socket.on('join_room', data => {
-		// if the room doesn't exist...
-		if (!rooms[data.join_key]) {
-			return io.to(data.source_socket).emit('no_key_error', data.join_key);
-		} else {
-			io.to(data.source_socket).emit('join', {
-				back_data: data,
-				key: data.join_key
-			});
-		}
-	});
+	// socket.on('join_room', data => {
+	// 	// if the room doesn't exist...
+	// 	if (!rooms[data.join_key]) {
+	// 		return io.to(data.source_socket).emit('no_key_error', data.join_key);
+	// 	} else {
+	// 		io.to(data.source_socket).emit('join', {
+	// 			back_data: data,
+	// 			key: data.join_key
+	// 		});
+	// 	}
+	// });
 
 
-	socket.on('load_players', data => {});
-	socket.on('start_game', data => {});
-	socket.on('stop_game', data => {});
-	socket.on('pause_game', data => {});
-	socket.on('disconnect', data => {});
+	// socket.on('load_players', data => {});
+	// socket.on('start_game', data => {});
+	// socket.on('stop_game', data => {});
+	// socket.on('pause_game', data => {});
+	// socket.on('disconnect', data => {});
 });
 
 
