@@ -733,6 +733,10 @@ input:checked + .slider:before {
 
 
 /* Game waiting room */
+.room {
+  padding-bottom: 30px;
+}
+
 .room-settings {
   text-align: center;
 }
@@ -758,6 +762,7 @@ input:checked + .slider:before {
   padding: 15px 20px;
   border-radius: 4px;
   margin-bottom: 10px;
+  font-size: 15px;
   color: var(--text-mid-gray);
   display: flex;
   align-items: center;
@@ -768,6 +773,7 @@ input:checked + .slider:before {
   font-weight: bold;
   color: var(--text-gray-white);
   margin-right: 10px;
+  font-size: 18px;
 }
 
 .room-player-card .player-status {

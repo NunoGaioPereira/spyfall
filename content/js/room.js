@@ -17,15 +17,13 @@
 
     function minute_up () {
         if (minute >= 60) { }
-        else if (minute < 5) { minute++; }
-        else { minute+=5; }
+        else { minute++; }
         setTime();
     }
 
     function minute_down () {
-        if (minute <= 5 && minute != 1) { minute--; }
-        else if(minute == 1) {}
-        else { minute-=5; }
+        if (minute != 1) { minute--; }
+        else {}
         setTime();
     }
 
