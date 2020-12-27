@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Spyfal</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <link rel="shortcut icon" type="image/png" href="includes/imgs/favicon.png"/> -->
+    <!-- <link rel="apple-touch-icon" href="includes/imgs/apple-touch-icon.png"> -->
+</head>
+<body class="light">
+    <div class="loader">
+         <img class="noselect" src="./includes/imgs/logo.png">
+         <svg class="spinner" width="24" height="24" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="nonzero">
+                <path class="ring_thumb" fill="#5a6174" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"></path>
+                <path class="ring_track" fill="#f2f2f2" d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z"></path>
+            </g>
+        </svg>
+    </div>
+    <div class="room">
+        <div class="info">
+            <img class="logo noselect" src="./includes/imgs/logo.png">
+        </div>
+        <div class="room-settings">
+            <p class="room-code">Room code: 7A4BJ8</p>
+            <div class="time-picker" data-time="00:10">
+                <div class="minute">
+                    <div class="min-down noselect">-</div>
+                    <input type="number" class="min noselect" value="10" readonly="disabled">
+                    <div class="min-up noselect">+</div>
+                </div>
+            </div>
+            <p class="mins-span">mins</p>
+        </div>
+        <div class="room-players">
+            <h3>Players</h3>
+            <div class="room-player-card">
+                <p><span>1</span>John Doe</p>
+                <div class="player-status"></div>
+            </div>
+            <div class="room-player-card">
+                <p><span>2</span>Jane Silva</p>
+                <div class="player-status ready"></div>
+            </div>
+            <div class="room-controls">
+                <a href="#/" id="ready_up" class="noselect">Ready up</a>
+                <a href="#/" id="leave_room" class="noselect">Leave game</a>
+            </div>
+            <a href="#/" id="start_game" class="noselect">Start game</a>
+        </div>
+        <div class="main">
+            <div class="settings">
+                <div class="setting">
+                    <span class="setting-title noselect">Dark theme</span>
+                    <label class="switch">
+                      <input type="checkbox" class="themeCheck">
+                      <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <!-- <div class="name-modal">
+        <img class="logo noselect" src="./includes/imgs/hat_round.png">
+        <h3>Enter room code:</h3>
+        <input type="text" name="join-code" id="join-code" maxlength="6" placeholder="Code">
+        <p id="room_error_message" style="color: red; font-weight: bold; margin-top: 8px;"></p>
+        <div class="buttons">
+            <a href="#/" id="close_name" class="noselect">Cancel</a>
+            <a href="#/" id="join_game" class="noselect">Go</a>
+        </div>
+    </div>
+    <div id="cover"></div> -->
+
+    <script src="./js/common.js"></script>
+    <script src="./js/room.js"></script>
+</body>
+</html>

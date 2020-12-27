@@ -1,6 +1,10 @@
 // const app = () => {
     var socket = io.connect('http://localhost:3000/');
 
+    // socket.on('message', (data) => {
+    //     console.log(data);
+    // })
+
     const name_modal = document.querySelector('.name-modal');
     const cover = document.querySelector('#cover');
     const join_button = document.querySelector('#join');
@@ -42,7 +46,7 @@
 
     function joinRoom() {
         if (joinCodeValidation(join_code_input.value)) {
-            socket.emit('joinGame');
+            socket.emit('joinGame', {usernam, room_code});
         }
     }
 

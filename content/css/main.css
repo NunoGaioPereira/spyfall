@@ -11,7 +11,9 @@
   --locations-grid-gap: 8px;
 
   --red: #ff2a2a;
-  --green: #15db51;
+  --green: #35dd68;
+
+  --text-mid-gray: #a2a2a2;
 }
 
 .light {
@@ -137,7 +139,6 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /*min-height: -webkit-fill-available;*/
     height: 100%;
     padding-bottom: 40px;
 }
@@ -155,7 +156,7 @@ h3 {
 
 .time-picker {
     max-width: 200px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
     color: #53565a;
     font-size: 35px;
     font-weight: 700;
@@ -164,7 +165,6 @@ h3 {
 
 .time-picker .minute {
     position: relative;
-    /*min-width: 60px;*/
     padding: 8px 0;
     text-align: center;
     display: flex;
@@ -174,7 +174,7 @@ h3 {
 
 .time-picker .minute .min {
     background: none;
-    color: var(--light-contrast);
+    color: var(--text-gray-white);
     font-size: 35px;
     appearance: none;
     border: none;
@@ -197,98 +197,35 @@ h3 {
     align-items: center;
     transition: background-color 0.15s ease-in-out;
     user-select: none;
-    /*position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 20px;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;*/
-    /*cursor: pointer;
-    transition: border-color 0.15s ease-in-out;*/
-}
-
-.time-picker .minute .min-up {
-    /*top: -10px;*/
-    /*border-bottom: 20px solid var(--dark-contrast);*/
-}
-
-.time-picker .minute .min-down {
-    /*bottom: -10px;*/
-    /*border-top: 20px solid var(--dark-contrast);*/
 }
 
 .time-picker .minute .min-up:hover,
 .time-picker .minute .min-down:hover {
-    /*border-bottom-color: var(--light-contrast);*/
-    /*border-top-color: var(--light-contrast);*/
     background-color: var(--light-gray);
 }
 
-.sound-picker {
-    margin: 20px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-.sound-picker button {
-  border: none;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  margin: 0 5px;
-  padding: 15px;
-  background-color: var(--dark-contrast);
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.sound-picker button:hover {
-    background-color: var(--light-contrast);
-}
-
-.sound-picker button.active {
-    background-color: var(--light-contrast);
-}
-
-.sound-picker button:active, .sound-picker button:focus {
-    outline: none;
-    border: none;
-}
-
-.sound-picker button svg {
-  height: 100%;
-}
-
-.sound-picker button:nth-child(1) svg, .sound-picker button:nth-child(2) svg {
-    fill: var(--background);
-    transition: fill 0.4s ease-in-out;
-}
-
-.sound-picker button:nth-child(3) svg {
-    stroke: var(--background);
-    stroke-width: 2px; 
-    fill: none; 
-    /*fill: var(--background);*/
-    transition: stroke 0.4s ease-in-out;
+.room-settings .mins-span {
+  margin-top: -13px;
+  font-weight: bold;
+  color: var(--text-gray-white);
+  font-size: 13px;
 }
 
 .settings {
-    margin: 50px auto 0;
-    max-width: 200px;
-    width: 200px;#
-    /*text-align: center;*/
+  margin: 50px auto 0;
+  max-width: 200px;
+  width: 200px;
 } 
 
 .settings .setting {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .settings .setting .setting-title {
-    color: var(--text-blue-white);
-    font-weight: 600;
+  color: var(--text-blue-white);
+  font-weight: 600;
 }
 
 .switch {
@@ -774,7 +711,6 @@ input:checked + .slider:before {
     visibility: visible;
 }
 
-
 @media (min-width: 600px) {
   .locations .locations-grid { 
     grid-template-columns: 1fr 1fr 1fr;
@@ -792,4 +728,103 @@ input:checked + .slider:before {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     width: calc((var(--locations-side) * 6) + (5 * var(--locations-grid-gap)));
   }
+}
+
+
+
+/* Game waiting room */
+.room-settings {
+  text-align: center;
+}
+.room .room-code {
+  margin-top: 30px;
+  color: var(--text-gray-white);
+}
+.room h3 {
+  color: var(--text-gray-white);
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+.room-players {
+  margin: 0 auto;
+  max-width: 240px;
+}
+
+.room-player-card {
+  background-color: var(--light-gray);
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  color: var(--text-mid-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.room-player-card span {
+  font-weight: bold;
+  color: var(--text-gray-white);
+  margin-right: 10px;
+}
+
+.room-player-card .player-status {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--red);
+  top: 0;
+  right: 0;
+}
+
+.room-player-card .player-status.ready {
+  background-color: var(--green);
+}
+
+.room-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+#ready_up, #leave_room {
+  /*display: block;*/
+  border-radius: 4px;
+  color: var(--text-white);
+  background-color: #f44336;
+  width: 48%;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+#ready_up {
+  background-color: var(--green);
+}
+
+#ready_up.ready {
+  background-color: var(--green);
+}
+
+#start_game {
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+    color: var(--text-white);
+    background-color: var(--light-contrast);
+    width: 240px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+#start_game:hover {
+    background-color: var(--dark-contrast);
 }

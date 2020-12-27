@@ -38,16 +38,23 @@ var io = socket(server);
 
 io.on('connection', (socket) => {
 	console.log("Connected!", socket.id);
+
+	socket.broadcast.emit('message', 'Test');
+
+	socket.on('disconnect', () => {
+		// io.emit('message', 'user has left');
+	});
 	// socket.on('create_room', data => {});
 
-	// socket.on('join_room', data => {
+	// socket.on('join', data => {
 	// 	// if the room doesn't exist...
-	// 	if (!rooms[data.join_key]) {
-	// 		return io.to(data.source_socket).emit('no_key_error', data.join_key);
-	// 	} else {
+	// 	if (!rooms[data.room_key]) {
+	// 		return io.to(data.source_socket).emit('no_key_error', data.room_key);
+	// 	} 
+	// 	else {
 	// 		io.to(data.source_socket).emit('join', {
 	// 			back_data: data,
-	// 			key: data.join_key
+	// 			key: data.room_key
 	// 		});
 	// 	}
 	// });
