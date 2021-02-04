@@ -1,74 +1,486 @@
 {
     "themes":[
         {
-            "general":{
-                "locations":[
-                    {
-                        "name":"Beach",
-                        "professions":[
-                            "Tourist",
-                            "Lifeguard"
-                        ],
-                        "image_name":"beach.png"
-                    },
-                    {
-                        "name":"Polar Station",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"pola_station.png"
-                    },
-                    {
-                        "name":"Castle",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"castle.png"
-                    },
-                    {
-                        "name":"Football match",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"football.png"
-                    },
-                    {
-                        "name":"Museum",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"museum.png"
-                    },
-                    {
-                        "name":"The Room You Are In",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"room.png"
-                    },
-                    {
-                        "name":"Polar Station",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"pola_station.png"
-                    },
-                    {
-                        "name":"Polar Station",
-                        "professions":[
-                            "Scientist",
-                            "Polar Bear"
-                        ],
-                        "image_name":"pola_station.png"
-                    }
-                ]
-            }
+            "locations":[
+                {
+                    "name":"Beach",
+                    "professions":[
+                        "Tourist",
+                        "Hole Digger",
+                        "Gold Finder",
+                        "Fat Dad",
+                        "Single Mom",
+                        "Sunburnt Sleeper",
+                        "Drowning Child",
+                        "Lost Child",
+                        "Lifeguard"
+                    ],
+                    "image_name":"beach.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Polar Station",
+                    "professions":[
+                        "Sleepless Scientist",
+                        "Penguin",
+                        "Yeti",
+                        "Skier",
+                        "Animal Rights Activist",
+                        "Polar Bear"
+                    ],
+                    "image_name":"polaR_station.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Castle",
+                    "professions":[
+                        "The Princess",
+                        "The Prince",
+                        "Humble Servant",
+                        "Slave",
+                        "Cook",
+                        "Royal Dog",
+                        "Damsel in Distress",
+                        "The King",
+                        "The Queen",
+                        "Valent Knight"
+                    ],
+                    "image_name":"castle.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Football Match",
+                    "professions":[
+                        "Referee",
+                        "Footbal Player",
+                        "Adept",
+                        "Popcorn Guy",
+                        "Enthusiastic Child",
+                        "Ticket Seller",
+                        "Bodyguard",
+                        "Journalist",
+                        "Photographer",
+                        "Mascot",
+                        "Goal Keeper",
+                        "Cristiano Ronaldo",
+                        "Crazy Cheerleader"
+                    ],
+                    "image_name":"football.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Museum",
+                    "professions":[
+                        "Pretentipus Art Student",
+                        "Rich Old Lady",
+                        "Information Guy",
+                        "Observer",
+                        "Art Dealer",
+                        "Historian",
+                        "Exotic Tourist",
+                        "Screaming Bored Child"
+                    ],
+                    "image_name":"museum.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"The Room You Are In",
+                    "professions":[
+                        "Yourself",
+                        "Yourself",
+                        "Yourself",
+                        "Yourself",
+                        "The Person in the Game Whose Name Comes Before You in Alphabetical Order"
+                    ],
+                    "image_name":"room.png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Hotel",
+                    "professions":[
+                        "Maître d'Hôtel",
+                        "Elevator Guy",
+                        "Bar Pianist",
+                        "Consuela, the Cleaning Lady",
+                        "Guest",
+                        "Businessman"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Casino",
+                    "professions":[
+                        "Gambling Addict",
+                        "Bodyguard",
+                        "James Bond",
+                        "Magician",
+                        "Bartender",
+                        "Suspicious Guy",
+                        "Card Counter",
+                        "Dice Whisperer",
+                        "Rich Old Lady",
+                        "Dealer"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Spa",
+                    "professions":[
+                        "Massagist",
+                        "The Owner",
+                        "Receptionist",
+                        "Chilled Person"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Irish Pub",
+                    "professions":[
+                        "Leprichon",
+                        "Hipster Beer Lover",
+                        "Drunk Bastard",
+                        "Drunk Singer",
+                        "Waiter",
+                        "Potato Farmer"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Restaurant",
+                    "professions":[
+                        "Chef",
+                        "Sous-Chef",
+                        "Dish Washer",
+                        "Waiter",
+                        "Non-stop Eater",
+                        "Client",
+                        "'Hmmm, let me see the menu again' Guy",
+                        "Annoying Child"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Aeroplane",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Space Station",
+                    "professions":[
+                        "Pilot",
+                        "Biologist",
+                        "Medic",
+                        "Biologist",
+                        "Biologist",
+                        "Existential Philosopher Wondering About the Origin of Universe and Time",
+                        "Mechanical Engineering",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Supermarket",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"School",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"University",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Submarine",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Church",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Pirate Ship",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Desert Island",
+                    "professions":[
+                        "Wilson, the Volleyball",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Bank",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"O Celeiro",
+                    "professions":[
+                        "Hipster Vegan",
+                        "Pharmacologist",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Military Base",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Crusader Army",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Azeitão",
+                    "professions":[
+                        "Sugar Addict no. 1",
+                        "Sugar Addict no. 2",
+                        "Sugar Addict no. 49",
+                        "Sleepy Head",
+                        "Playstation Addict",
+                        "Coach Cabral",
+                        "Cookie Monster",
+                        "Couch Potato",
+                        "Angry Board Game Player",
+                        "The One Who Takes Too Long in the Shower",
+                        "Pastry Chef"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Cruiser",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Service Station",
+                    "professions":[
+                        "Creep",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Minecraft",
+                    "professions":[
+                        "Steve",
+                        "Pig",
+                        "Cow",
+                        "Enderman",
+                        "Dragon",
+                        "Ocelot",
+                        "Creeper"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Corporate Party",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Hospital",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Train",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Wedding",
+                    "professions":[
+                        "Bride",
+                        "Groom",
+                        "Photographer",
+                        "Loving Mother",
+                        "Person Secretly Eating the Cake Before it's Time",
+                        "Wedding Crasher",
+                        "Priest",
+                        "Cook",
+                        "Unhappy Bride's Father",
+                        "Band Musician"
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"Apple Store",
+                    "professions":[
+                        "Apple Fan",
+                        "Steve Jobs",
+                        "Person Who Can't Afford an iPhone",
+                        "Android Lover",
+                        "Pretentious Tech Reviewer"
+                    ],
+                    "image_name":".png",
+                    "theme": "extra"
+                },
+                {
+                    "name":"",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+                {
+                    "name":"",
+                    "professions":[
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "image_name":".png",
+                    "theme": "general"
+                },
+            ]
         }
     ]
 }

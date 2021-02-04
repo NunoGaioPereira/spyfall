@@ -24,9 +24,12 @@ app.use(express.static('content'));
 const json_data = JSON.parse(fs.readFileSync('./content/data.json', 'utf8'));
 const num_locations = json_data.themes[0].general.locations.length;
 const location_index = randomIntFromInterval(0, num_locations - 1);
-const num_roles = json_data.themes[0].general.locations[location_index].professions;
+const dataset = json_data.themes[0].general.locations[location_index]
+const location_name = dataset.name;
+const professions = dataset.professions;
 
-console.log(json_data.themes[0].general.locations[location_index].professions)
+console.log(location_name)
+console.log(professions)
 
 const num_players = 8;
 const spy_index = randomIntFromInterval(0, num_players - 1);
